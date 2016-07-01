@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>piratedunbar.com</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Start Bootstrap</a>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="header text-center">
+      <h1 class="heading">Welcome To Our Studio!</h1>
+      <p class="subheading">
+        It's nice to meet you
+      </p>
+      <a href="#" class="btn btn-lg">Tell me more</a>
+    </div>
+
+    <section class="container">
+
+      <% if (submission) { %>
+        <div class="bg-sucess">
+          <p>
+            Thank you for submission your request. We will get back to you ASAP! #piratelife
+          </p>
+        </div>
+      <% } else if (submission == false) { %>
+        <div class="bg-danger">
+          <p>
+            Sorry this didn't work out for you. #piratelife
+          </p>
+        </div>
+      <% } %>
+
+      <form class="form-horizontal" method="post" data-parsley-validate>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2">Message</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="message" minlength="6"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+          </div>
+        </div>
+
+      </form>
+
+
+    </section>
+
+
+    <section class="container">
+      <h2>Contact Form Results</h2>
+
+      <table class="contact-entries table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>EMAIL</th>
+            <th>MESSAGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (row in entries) { %>
+            <tr>
+              <td><%= entries[row]._id %></td>
+              <td><%= entries[row].email %></td>
+              <td><%= entries[row].message %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </section>
+
+
+    <section class="services text-center">
+      <h1 class="heading">Services</h1>
+      <p class="subheading">
+        Lorem ipsum
+      </p>
+
+      <div class="container">
+
+        <div class="col-xs-12 col-md-4">
+          <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          <h3 class="title">E-commerce</h3>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+          </p>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          <h3 class="title">E-commerce</h3>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+          </p>
+        </div>
+
+        <div class="col-xs-12 col-md-4">
+          <span class="glyphicon glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+          <h3 class="title">E-commerce</h3>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+
+    <script src="parsleyjs/parsley.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="/js/navbar-scroll.js"></script>
+  </body>
+</html>
